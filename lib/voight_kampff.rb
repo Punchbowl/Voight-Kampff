@@ -1,6 +1,11 @@
 require 'voight_kampff/test'
 require 'voight_kampff/user_agents_parser'
-require 'voight_kampff/engine' if defined?(Rails)
+
+if defined?(Rails)
+  if Rails::VERSION::MAJOR >= 3
+    require 'voight_kampff/engine'
+  end
+end
 
 module VoightKampff
 
